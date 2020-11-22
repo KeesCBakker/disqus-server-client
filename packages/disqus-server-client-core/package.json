@@ -6,7 +6,7 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "exit 0",
-        "build": "del-cli dist & tsc --build tsconfig.json",
+        "build": "del-cli dist & tsc",
         "audit-fix": "npm audit fix --force & npm install",
         "update": "ncu -u & npm install & npm run audit-fix",
         "format": "prettier --write ./src/",
@@ -31,6 +31,7 @@
         "node-cache": "^5.1.2"
     },
     "devDependencies": {
-        "del-cli": "^3.0.1"
+        "del-cli": "^3.0.1",
+        "prettier": "^2.2.0"
     }
 }

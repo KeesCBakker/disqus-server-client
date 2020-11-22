@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IAetAnonymousSubscribeParameters {
@@ -69,12 +70,15 @@ export class AetEndpoint {
      *
      * @param {IAetAnonymousSubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} AetEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} AetEndpoint
      */
     anonymousSubscribe(
         parameters: IAetAnonymousSubscribeParameters
-    ): Promise<any> {
-        return this.client.request("aet/anonymousSubscribe", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "aet/anonymousSubscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -82,10 +86,15 @@ export class AetEndpoint {
      *
      * @param {IAetDismissParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} AetEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} AetEndpoint
      */
-    dismiss(parameters: IAetDismissParameters): Promise<any> {
-        return this.client.request("aet/dismiss", parameters)
+    dismiss(
+        parameters: IAetDismissParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "aet/dismiss",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -93,10 +102,13 @@ export class AetEndpoint {
      *
      * @param {IAetExportParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} AetEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} AetEndpoint
      */
-    export(parameters: IAetExportParameters): Promise<any> {
-        return this.client.request("aet/export", parameters)
+    export(parameters: IAetExportParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "aet/export",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -104,12 +116,15 @@ export class AetEndpoint {
      *
      * @param {IAetPendingExportInfoParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} AetEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} AetEndpoint
      */
     pendingExportInfo(
         parameters: IAetPendingExportInfoParameters
-    ): Promise<any> {
-        return this.client.request("aet/pendingExportInfo", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "aet/pendingExportInfo",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -117,9 +132,14 @@ export class AetEndpoint {
      *
      * @param {IAetSubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} AetEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} AetEndpoint
      */
-    subscribe(parameters: IAetSubscribeParameters): Promise<any> {
-        return this.client.request("aet/subscribe", parameters)
+    subscribe(
+        parameters: IAetSubscribeParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "aet/subscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

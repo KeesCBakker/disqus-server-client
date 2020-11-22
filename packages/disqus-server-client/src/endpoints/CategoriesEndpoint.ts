@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface ICategoriesCreateParameters {
@@ -381,7 +382,10 @@ export class CategoriesEndpoint {
     create(
         parameters: ICategoriesCreateParameters
     ): Promise<ICategoriesCreate> {
-        return this.client.request("categories/create", parameters)
+        return this.client.request(
+            "categories/create",
+            parameters
+        ) as Promise<ICategoriesCreate>
     }
 
     /**
@@ -394,7 +398,10 @@ export class CategoriesEndpoint {
     details(
         parameters: ICategoriesDetailsParameters
     ): Promise<ICategoriesDetails> {
-        return this.client.request("categories/details", parameters)
+        return this.client.request(
+            "categories/details",
+            parameters
+        ) as Promise<ICategoriesDetails>
     }
 
     /**
@@ -405,7 +412,10 @@ export class CategoriesEndpoint {
      * @memberOf {Promise<ICategoriesList>} CategoriesEndpoint
      */
     list(parameters: ICategoriesListParameters): Promise<ICategoriesList> {
-        return this.client.request("categories/list", parameters)
+        return this.client.request(
+            "categories/list",
+            parameters
+        ) as Promise<ICategoriesList>
     }
 
     /**
@@ -418,7 +428,10 @@ export class CategoriesEndpoint {
     listPosts(
         parameters: ICategoriesListPostsParameters
     ): Promise<ICategoriesListPosts> {
-        return this.client.request("categories/listPosts", parameters)
+        return this.client.request(
+            "categories/listPosts",
+            parameters
+        ) as Promise<ICategoriesListPosts>
     }
 
     /**
@@ -431,6 +444,9 @@ export class CategoriesEndpoint {
     listThreads(
         parameters: ICategoriesListThreadsParameters
     ): Promise<ICategoriesListThreads> {
-        return this.client.request("categories/listThreads", parameters)
+        return this.client.request(
+            "categories/listThreads",
+            parameters
+        ) as Promise<ICategoriesListThreads>
     }
 }

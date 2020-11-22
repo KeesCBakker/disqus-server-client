@@ -1,14 +1,14 @@
-import { IGenericDiscusResponse } from "./IGenericIDiscusResponse"
+import { IGenericDisqusResponse } from "./IGenericDisqusResponse"
 import { actionRequiringPost } from "./data/posts"
 import { cachedActions } from "./data/cached"
 import { DisqusCore } from "./DisqusCore"
-import { IDiscusResponse } from "./IDiscusResponse"
+import { IDisqusResponse } from "./IDisqusResponse"
 import { IDisqusConfig } from "./IDisqusConfig"
 
 export {
     DisqusCore,
-    IDiscusResponse,
-    IGenericDiscusResponse,
+    IDisqusResponse as IDiscusResponse,
+    IGenericDisqusResponse as IGenericDiscusResponse,
     IDisqusConfig,
     cachedActions,
     actionRequiringPost,

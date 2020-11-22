@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IImportsDetailsParameters {
@@ -38,10 +39,15 @@ export class ImportsEndpoint {
      *
      * @param {IImportsDetailsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ImportsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ImportsEndpoint
      */
-    details(parameters: IImportsDetailsParameters): Promise<any> {
-        return this.client.request("imports/details", parameters)
+    details(
+        parameters: IImportsDetailsParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "imports/details",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -49,9 +55,12 @@ export class ImportsEndpoint {
      *
      * @param {IImportsListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ImportsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ImportsEndpoint
      */
-    list(parameters: IImportsListParameters): Promise<any> {
-        return this.client.request("imports/list", parameters)
+    list(parameters: IImportsListParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "imports/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

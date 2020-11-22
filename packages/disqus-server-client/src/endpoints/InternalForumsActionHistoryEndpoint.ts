@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IInternalForumsActionHistoryBulkCreateParameters {
@@ -214,15 +215,15 @@ export class InternalForumsActionHistoryEndpoint {
      *
      * @param {IInternalForumsActionHistoryBulkCreateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} InternalForumsActionHistoryEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} InternalForumsActionHistoryEndpoint
      */
     bulkCreate(
         parameters: IInternalForumsActionHistoryBulkCreateParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "internal/forums/actionHistory/bulkCreate",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -230,15 +231,15 @@ export class InternalForumsActionHistoryEndpoint {
      *
      * @param {IInternalForumsActionHistoryCreateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} InternalForumsActionHistoryEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} InternalForumsActionHistoryEndpoint
      */
     create(
         parameters: IInternalForumsActionHistoryCreateParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "internal/forums/actionHistory/create",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -246,15 +247,15 @@ export class InternalForumsActionHistoryEndpoint {
      *
      * @param {IInternalForumsActionHistoryDeleteParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} InternalForumsActionHistoryEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} InternalForumsActionHistoryEndpoint
      */
     delete(
         parameters: IInternalForumsActionHistoryDeleteParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "internal/forums/actionHistory/delete",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -262,14 +263,14 @@ export class InternalForumsActionHistoryEndpoint {
      *
      * @param {IInternalForumsActionHistoryUpdateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} InternalForumsActionHistoryEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} InternalForumsActionHistoryEndpoint
      */
     update(
         parameters: IInternalForumsActionHistoryUpdateParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "internal/forums/actionHistory/update",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 }

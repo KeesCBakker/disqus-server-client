@@ -25,7 +25,7 @@ export class Category {
 		}
 
 
-        return `
+		return `import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus";
 
 ${interfaces}

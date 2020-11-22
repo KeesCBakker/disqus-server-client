@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IForumsBehindClickDetailsParameters {
@@ -69,10 +70,15 @@ export class ForumsBehindClickEndpoint {
      *
      * @param {IForumsBehindClickDetailsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsBehindClickEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsBehindClickEndpoint
      */
-    details(parameters: IForumsBehindClickDetailsParameters): Promise<any> {
-        return this.client.request("forums/behindClick/details", parameters)
+    details(
+        parameters: IForumsBehindClickDetailsParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/behindClick/details",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -80,9 +86,14 @@ export class ForumsBehindClickEndpoint {
      *
      * @param {IForumsBehindClickUpdateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsBehindClickEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsBehindClickEndpoint
      */
-    update(parameters: IForumsBehindClickUpdateParameters): Promise<any> {
-        return this.client.request("forums/behindClick/update", parameters)
+    update(
+        parameters: IForumsBehindClickUpdateParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/behindClick/update",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

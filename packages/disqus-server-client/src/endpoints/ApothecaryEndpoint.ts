@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IApothecarySuggestParameters {
@@ -19,9 +20,14 @@ export class ApothecaryEndpoint {
      *
      * @param {IApothecarySuggestParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ApothecaryEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ApothecaryEndpoint
      */
-    suggest(parameters: IApothecarySuggestParameters): Promise<any> {
-        return this.client.request("apothecary/suggest", parameters)
+    suggest(
+        parameters: IApothecarySuggestParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "apothecary/suggest",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

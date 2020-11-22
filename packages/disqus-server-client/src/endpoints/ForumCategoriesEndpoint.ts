@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IForumCategoriesDetailsParameters {
@@ -18,19 +19,26 @@ export class ForumCategoriesEndpoint {
      *
      * @param {IForumCategoriesDetailsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumCategoriesEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumCategoriesEndpoint
      */
-    details(parameters: IForumCategoriesDetailsParameters): Promise<any> {
-        return this.client.request("forumCategories/details", parameters)
+    details(
+        parameters: IForumCategoriesDetailsParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forumCategories/details",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
      * Returns a list of forum categories
      *
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumCategoriesEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumCategoriesEndpoint
      */
-    list(): Promise<any> {
-        return this.client.request("forumCategories/list")
+    list(): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forumCategories/list"
+        ) as Promise<IGenericDisqusResponse>
     }
 }

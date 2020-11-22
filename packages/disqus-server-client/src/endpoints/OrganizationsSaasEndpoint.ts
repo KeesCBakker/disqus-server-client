@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IOrganizationsSaasBillingInformationParameters {
@@ -203,15 +204,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasBillingInformationParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     billingInformation(
         parameters: IOrganizationsSaasBillingInformationParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "organizations/saas/billingInformation",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -219,12 +220,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasCurrentPlanParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     currentPlan(
         parameters: IOrganizationsSaasCurrentPlanParameters
-    ): Promise<any> {
-        return this.client.request("organizations/saas/currentPlan", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/saas/currentPlan",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -232,15 +236,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasRemovePaymentInfoParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     removePaymentInfo(
         parameters: IOrganizationsSaasRemovePaymentInfoParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "organizations/saas/removePaymentInfo",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -248,10 +252,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasSubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
-    subscribe(parameters: IOrganizationsSaasSubscribeParameters): Promise<any> {
-        return this.client.request("organizations/saas/subscribe", parameters)
+    subscribe(
+        parameters: IOrganizationsSaasSubscribeParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/saas/subscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -259,12 +268,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasUnsubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     unsubscribe(
         parameters: IOrganizationsSaasUnsubscribeParameters
-    ): Promise<any> {
-        return this.client.request("organizations/saas/unsubscribe", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/saas/unsubscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -272,15 +284,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasUpdateInvoiceInfoParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     updateInvoiceInfo(
         parameters: IOrganizationsSaasUpdateInvoiceInfoParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "organizations/saas/updateInvoiceInfo",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -288,15 +300,15 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasUpdatePaymentInfoParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     updatePaymentInfo(
         parameters: IOrganizationsSaasUpdatePaymentInfoParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "organizations/saas/updatePaymentInfo",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -304,14 +316,14 @@ export class OrganizationsSaasEndpoint {
      *
      * @param {IOrganizationsSaasValidateCouponParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsSaasEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsSaasEndpoint
      */
     validateCoupon(
         parameters: IOrganizationsSaasValidateCouponParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "organizations/saas/validateCoupon",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 }

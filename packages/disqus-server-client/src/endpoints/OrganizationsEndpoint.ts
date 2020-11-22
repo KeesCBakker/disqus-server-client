@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IOrganizationsAddAdminParameters {
@@ -95,10 +96,15 @@ export class OrganizationsEndpoint {
      *
      * @param {IOrganizationsAddAdminParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsEndpoint
      */
-    addAdmin(parameters: IOrganizationsAddAdminParameters): Promise<any> {
-        return this.client.request("organizations/addAdmin", parameters)
+    addAdmin(
+        parameters: IOrganizationsAddAdminParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/addAdmin",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -106,10 +112,15 @@ export class OrganizationsEndpoint {
      *
      * @param {IOrganizationsListAdminsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsEndpoint
      */
-    listAdmins(parameters: IOrganizationsListAdminsParameters): Promise<any> {
-        return this.client.request("organizations/listAdmins", parameters)
+    listAdmins(
+        parameters: IOrganizationsListAdminsParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/listAdmins",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -117,10 +128,15 @@ export class OrganizationsEndpoint {
      *
      * @param {IOrganizationsRemoveAdminParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsEndpoint
      */
-    removeAdmin(parameters: IOrganizationsRemoveAdminParameters): Promise<any> {
-        return this.client.request("organizations/removeAdmin", parameters)
+    removeAdmin(
+        parameters: IOrganizationsRemoveAdminParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/removeAdmin",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -128,9 +144,14 @@ export class OrganizationsEndpoint {
      *
      * @param {IOrganizationsSetRoleParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} OrganizationsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} OrganizationsEndpoint
      */
-    setRole(parameters: IOrganizationsSetRoleParameters): Promise<any> {
-        return this.client.request("organizations/setRole", parameters)
+    setRole(
+        parameters: IOrganizationsSetRoleParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "organizations/setRole",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

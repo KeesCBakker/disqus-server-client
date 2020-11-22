@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IWhitelistsAddParameters {
@@ -153,10 +154,13 @@ export class WhitelistsEndpoint {
      *
      * @param {IWhitelistsAddParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} WhitelistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} WhitelistsEndpoint
      */
-    add(parameters: IWhitelistsAddParameters): Promise<any> {
-        return this.client.request("whitelists/add", parameters)
+    add(parameters: IWhitelistsAddParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "whitelists/add",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -164,10 +168,15 @@ export class WhitelistsEndpoint {
      *
      * @param {IWhitelistsListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} WhitelistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} WhitelistsEndpoint
      */
-    list(parameters: IWhitelistsListParameters): Promise<any> {
-        return this.client.request("whitelists/list", parameters)
+    list(
+        parameters: IWhitelistsListParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "whitelists/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -175,9 +184,14 @@ export class WhitelistsEndpoint {
      *
      * @param {IWhitelistsRemoveParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} WhitelistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} WhitelistsEndpoint
      */
-    remove(parameters: IWhitelistsRemoveParameters): Promise<any> {
-        return this.client.request("whitelists/remove", parameters)
+    remove(
+        parameters: IWhitelistsRemoveParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "whitelists/remove",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

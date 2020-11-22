@@ -2,8 +2,8 @@ import axios, { AxiosRequestConfig, Method } from "axios"
 import NodeCache from "node-cache"
 import { actionRequiringPost } from "./data/posts"
 import { cachedActions } from "./data/cached"
-import { IDiscusResponse } from "./IDiscusResponse"
-import { IGenericDiscusResponse } from "./IGenericIDiscusResponse"
+import { IDisqusResponse } from "./IDisqusResponse"
+import { IGenericDisqusResponse } from "./IGenericDisqusResponse"
 import { IDisqusConfig } from "./IDisqusConfig"
 
 /**
@@ -31,15 +31,15 @@ export class DisqusCore {
      *
      * @param {string} action The action.
      * @param {*} [parameters={}] The parameters.
-     * @returns {Promise<IGenericDiscusResponse>} The response in the form of a Promise.
+     * @returns {Promise<IGenericDisqusResponse>} The response in the form of a Promise.
      *
      * @memberOf DisqusCore
      */
     post(
         action: string,
         parameters: any = {}
-    ): Promise<IGenericDiscusResponse> {
-        return this._requestWithPossibleCache<IDiscusResponse<any>>(
+    ): Promise<IGenericDisqusResponse> {
+        return this._requestWithPossibleCache<IDisqusResponse<any>>(
             action,
             parameters,
             "POST"
@@ -51,12 +51,12 @@ export class DisqusCore {
      *
      * @param {string} action The action.
      * @param {*} [parameters={}] The parameters.
-     * @returns {Promise<IGenericDiscusResponse>} The response in the form of a Promise.
+     * @returns {Promise<IGenericDisqusResponse>} The response in the form of a Promise.
      *
      * @memberOf DisqusCore
      */
-    get(action: string, parameters: any = {}): Promise<IGenericDiscusResponse> {
-        return this._requestWithPossibleCache<IDiscusResponse<any>>(
+    get(action: string, parameters: any = {}): Promise<IGenericDisqusResponse> {
+        return this._requestWithPossibleCache<IDisqusResponse<any>>(
             action,
             parameters,
             "GET"
@@ -68,15 +68,15 @@ export class DisqusCore {
      *
      * @param {string} action The action.
      * @param {*} [parameters={}] The parameters.
-     * @returns {Promise<IGenericDiscusResponse>} The response in the form of a Promise.
+     * @returns {Promise<IGenericDisqusResponse>} The response in the form of a Promise.
      *
      * @memberOf DisqusCore
      */
     request(
         action: string,
         parameters: any = {}
-    ): Promise<IGenericDiscusResponse> {
-        return this._requestWithPossibleCache<IDiscusResponse<any>>(
+    ): Promise<IGenericDisqusResponse> {
+        return this._requestWithPossibleCache<IDisqusResponse<any>>(
             action,
             parameters,
             actionRequiringPost.has(action) ? "POST" : "GET"

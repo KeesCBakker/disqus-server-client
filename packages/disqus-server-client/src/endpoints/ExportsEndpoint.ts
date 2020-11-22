@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IExportsExportForumParameters {
@@ -26,9 +27,14 @@ export class ExportsEndpoint {
      *
      * @param {IExportsExportForumParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ExportsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ExportsEndpoint
      */
-    exportForum(parameters: IExportsExportForumParameters): Promise<any> {
-        return this.client.request("exports/exportForum", parameters)
+    exportForum(
+        parameters: IExportsExportForumParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "exports/exportForum",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

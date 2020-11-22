@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IThreadsApproveParameters {
@@ -1005,10 +1006,15 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsApproveParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    approve(parameters: IThreadsApproveParameters): Promise<any> {
-        return this.client.request("threads/approve", parameters)
+    approve(
+        parameters: IThreadsApproveParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/approve",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1019,7 +1025,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsClose>} ThreadsEndpoint
      */
     close(parameters: IThreadsCloseParameters): Promise<IThreadsClose> {
-        return this.client.request("threads/close", parameters)
+        return this.client.request(
+            "threads/close",
+            parameters
+        ) as Promise<IThreadsClose>
     }
 
     /**
@@ -1030,7 +1039,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsCreate>} ThreadsEndpoint
      */
     create(parameters: IThreadsCreateParameters): Promise<IThreadsCreate> {
-        return this.client.request("threads/create", parameters)
+        return this.client.request(
+            "threads/create",
+            parameters
+        ) as Promise<IThreadsCreate>
     }
 
     /**
@@ -1041,7 +1053,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsDetails>} ThreadsEndpoint
      */
     details(parameters: IThreadsDetailsParameters): Promise<IThreadsDetails> {
-        return this.client.request("threads/details", parameters)
+        return this.client.request(
+            "threads/details",
+            parameters
+        ) as Promise<IThreadsDetails>
     }
 
     /**
@@ -1052,7 +1067,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsList>} ThreadsEndpoint
      */
     list(parameters: IThreadsListParameters): Promise<IThreadsList> {
-        return this.client.request("threads/list", parameters)
+        return this.client.request(
+            "threads/list",
+            parameters
+        ) as Promise<IThreadsList>
     }
 
     /**
@@ -1063,7 +1081,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsListHot>} ThreadsEndpoint
      */
     listHot(parameters: IThreadsListHotParameters): Promise<IThreadsListHot> {
-        return this.client.request("threads/listHot", parameters)
+        return this.client.request(
+            "threads/listHot",
+            parameters
+        ) as Promise<IThreadsListHot>
     }
 
     /**
@@ -1076,7 +1097,10 @@ export class ThreadsEndpoint {
     listPopular(
         parameters: IThreadsListPopularParameters
     ): Promise<IThreadsListPopular> {
-        return this.client.request("threads/listPopular", parameters)
+        return this.client.request(
+            "threads/listPopular",
+            parameters
+        ) as Promise<IThreadsListPopular>
     }
 
     /**
@@ -1089,7 +1113,10 @@ export class ThreadsEndpoint {
     listPosts(
         parameters: IThreadsListPostsParameters
     ): Promise<IThreadsListPosts> {
-        return this.client.request("threads/listPosts", parameters)
+        return this.client.request(
+            "threads/listPosts",
+            parameters
+        ) as Promise<IThreadsListPosts>
     }
 
     /**
@@ -1097,12 +1124,15 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsListUsersVotedThreadParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
     listUsersVotedThread(
         parameters: IThreadsListUsersVotedThreadParameters
-    ): Promise<any> {
-        return this.client.request("threads/listUsersVotedThread", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/listUsersVotedThread",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1113,7 +1143,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsOpen>} ThreadsEndpoint
      */
     open(parameters: IThreadsOpenParameters): Promise<IThreadsOpen> {
-        return this.client.request("threads/open", parameters)
+        return this.client.request(
+            "threads/open",
+            parameters
+        ) as Promise<IThreadsOpen>
     }
 
     /**
@@ -1121,10 +1154,15 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsRatingsSummaryParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    ratingsSummary(parameters: IThreadsRatingsSummaryParameters): Promise<any> {
-        return this.client.request("threads/ratingsSummary", parameters)
+    ratingsSummary(
+        parameters: IThreadsRatingsSummaryParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/ratingsSummary",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1135,7 +1173,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsRemove>} ThreadsEndpoint
      */
     remove(parameters: IThreadsRemoveParameters): Promise<IThreadsRemove> {
-        return this.client.request("threads/remove", parameters)
+        return this.client.request(
+            "threads/remove",
+            parameters
+        ) as Promise<IThreadsRemove>
     }
 
     /**
@@ -1146,7 +1187,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsRestore>} ThreadsEndpoint
      */
     restore(parameters: IThreadsRestoreParameters): Promise<IThreadsRestore> {
-        return this.client.request("threads/restore", parameters)
+        return this.client.request(
+            "threads/restore",
+            parameters
+        ) as Promise<IThreadsRestore>
     }
 
     /**
@@ -1154,10 +1198,13 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsSetParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    set(parameters: IThreadsSetParameters): Promise<any> {
-        return this.client.request("threads/set", parameters)
+    set(parameters: IThreadsSetParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/set",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1165,10 +1212,13 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsSpamParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    spam(parameters: IThreadsSpamParameters): Promise<any> {
-        return this.client.request("threads/spam", parameters)
+    spam(parameters: IThreadsSpamParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/spam",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1176,10 +1226,15 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsSubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    subscribe(parameters: IThreadsSubscribeParameters): Promise<any> {
-        return this.client.request("threads/subscribe", parameters)
+    subscribe(
+        parameters: IThreadsSubscribeParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/subscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1187,10 +1242,15 @@ export class ThreadsEndpoint {
      *
      * @param {IThreadsUnsubscribeParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ThreadsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ThreadsEndpoint
      */
-    unsubscribe(parameters: IThreadsUnsubscribeParameters): Promise<any> {
-        return this.client.request("threads/unsubscribe", parameters)
+    unsubscribe(
+        parameters: IThreadsUnsubscribeParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "threads/unsubscribe",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1201,7 +1261,10 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsUpdate>} ThreadsEndpoint
      */
     update(parameters: IThreadsUpdateParameters): Promise<IThreadsUpdate> {
-        return this.client.request("threads/update", parameters)
+        return this.client.request(
+            "threads/update",
+            parameters
+        ) as Promise<IThreadsUpdate>
     }
 
     /**
@@ -1212,6 +1275,9 @@ export class ThreadsEndpoint {
      * @memberOf {Promise<IThreadsVote>} ThreadsEndpoint
      */
     vote(parameters: IThreadsVoteParameters): Promise<IThreadsVote> {
-        return this.client.request("threads/vote", parameters)
+        return this.client.request(
+            "threads/vote",
+            parameters
+        ) as Promise<IThreadsVote>
     }
 }

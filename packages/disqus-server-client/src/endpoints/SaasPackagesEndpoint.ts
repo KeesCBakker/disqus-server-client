@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface ISaasPackagesListParameters {
@@ -19,9 +20,14 @@ export class SaasPackagesEndpoint {
      *
      * @param {ISaasPackagesListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} SaasPackagesEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} SaasPackagesEndpoint
      */
-    list(parameters: ISaasPackagesListParameters): Promise<any> {
-        return this.client.request("saas/packages/list", parameters)
+    list(
+        parameters: ISaasPackagesListParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "saas/packages/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

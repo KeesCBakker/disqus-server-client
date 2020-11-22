@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IBlacklistsAddParameters {
@@ -236,20 +237,25 @@ export class BlacklistsEndpoint {
      *
      * @param {IBlacklistsAddParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} BlacklistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} BlacklistsEndpoint
      */
-    add(parameters: IBlacklistsAddParameters): Promise<any> {
-        return this.client.request("blacklists/add", parameters)
+    add(parameters: IBlacklistsAddParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "blacklists/add",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
      * This method has no descript in on the API.
      *
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} BlacklistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} BlacklistsEndpoint
      */
-    backfillCounters(): Promise<any> {
-        return this.client.request("blacklists/backfillCounters")
+    backfillCounters(): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "blacklists/backfillCounters"
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -257,10 +263,15 @@ export class BlacklistsEndpoint {
      *
      * @param {IBlacklistsListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} BlacklistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} BlacklistsEndpoint
      */
-    list(parameters: IBlacklistsListParameters): Promise<any> {
-        return this.client.request("blacklists/list", parameters)
+    list(
+        parameters: IBlacklistsListParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "blacklists/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -268,9 +279,14 @@ export class BlacklistsEndpoint {
      *
      * @param {IBlacklistsRemoveParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} BlacklistsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} BlacklistsEndpoint
      */
-    remove(parameters: IBlacklistsRemoveParameters): Promise<any> {
-        return this.client.request("blacklists/remove", parameters)
+    remove(
+        parameters: IBlacklistsRemoveParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "blacklists/remove",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

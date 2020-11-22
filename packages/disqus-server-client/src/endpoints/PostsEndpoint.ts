@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IPostsApproveParameters {
@@ -974,7 +975,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsApprove>} PostsEndpoint
      */
     approve(parameters: IPostsApproveParameters): Promise<IPostsApprove> {
-        return this.client.request("posts/approve", parameters)
+        return this.client.request(
+            "posts/approve",
+            parameters
+        ) as Promise<IPostsApprove>
     }
 
     /**
@@ -985,7 +989,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsCreate>} PostsEndpoint
      */
     create(parameters: IPostsCreateParameters): Promise<IPostsCreate> {
-        return this.client.request("posts/create", parameters)
+        return this.client.request(
+            "posts/create",
+            parameters
+        ) as Promise<IPostsCreate>
     }
 
     /**
@@ -996,7 +1003,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsDetails>} PostsEndpoint
      */
     details(parameters: IPostsDetailsParameters): Promise<IPostsDetails> {
-        return this.client.request("posts/details", parameters)
+        return this.client.request(
+            "posts/details",
+            parameters
+        ) as Promise<IPostsDetails>
     }
 
     /**
@@ -1009,7 +1019,10 @@ export class PostsEndpoint {
     getContext(
         parameters: IPostsGetContextParameters
     ): Promise<IPostsGetContext> {
-        return this.client.request("posts/getContext", parameters)
+        return this.client.request(
+            "posts/getContext",
+            parameters
+        ) as Promise<IPostsGetContext>
     }
 
     /**
@@ -1020,7 +1033,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsList>} PostsEndpoint
      */
     list(parameters: IPostsListParameters): Promise<IPostsList> {
-        return this.client.request("posts/list", parameters)
+        return this.client.request(
+            "posts/list",
+            parameters
+        ) as Promise<IPostsList>
     }
 
     /**
@@ -1028,12 +1044,15 @@ export class PostsEndpoint {
      *
      * @param {IPostsListModerationHistoryParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} PostsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} PostsEndpoint
      */
     listModerationHistory(
         parameters: IPostsListModerationHistoryParameters
-    ): Promise<any> {
-        return this.client.request("posts/listModerationHistory", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "posts/listModerationHistory",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1046,7 +1065,10 @@ export class PostsEndpoint {
     listPopular(
         parameters: IPostsListPopularParameters
     ): Promise<IPostsListPopular> {
-        return this.client.request("posts/listPopular", parameters)
+        return this.client.request(
+            "posts/listPopular",
+            parameters
+        ) as Promise<IPostsListPopular>
     }
 
     /**
@@ -1054,10 +1076,15 @@ export class PostsEndpoint {
      *
      * @param {IPostsListReportersParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} PostsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} PostsEndpoint
      */
-    listReporters(parameters: IPostsListReportersParameters): Promise<any> {
-        return this.client.request("posts/listReporters", parameters)
+    listReporters(
+        parameters: IPostsListReportersParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "posts/listReporters",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1068,7 +1095,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsRemove>} PostsEndpoint
      */
     remove(parameters: IPostsRemoveParameters): Promise<IPostsRemove> {
-        return this.client.request("posts/remove", parameters)
+        return this.client.request(
+            "posts/remove",
+            parameters
+        ) as Promise<IPostsRemove>
     }
 
     /**
@@ -1079,7 +1109,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsReport>} PostsEndpoint
      */
     report(parameters: IPostsReportParameters): Promise<IPostsReport> {
-        return this.client.request("posts/report", parameters)
+        return this.client.request(
+            "posts/report",
+            parameters
+        ) as Promise<IPostsReport>
     }
 
     /**
@@ -1090,7 +1123,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsRestore>} PostsEndpoint
      */
     restore(parameters: IPostsRestoreParameters): Promise<IPostsRestore> {
-        return this.client.request("posts/restore", parameters)
+        return this.client.request(
+            "posts/restore",
+            parameters
+        ) as Promise<IPostsRestore>
     }
 
     /**
@@ -1101,7 +1137,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsSpam>} PostsEndpoint
      */
     spam(parameters: IPostsSpamParameters): Promise<IPostsSpam> {
-        return this.client.request("posts/spam", parameters)
+        return this.client.request(
+            "posts/spam",
+            parameters
+        ) as Promise<IPostsSpam>
     }
 
     /**
@@ -1112,7 +1151,10 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsUpdate>} PostsEndpoint
      */
     update(parameters: IPostsUpdateParameters): Promise<IPostsUpdate> {
-        return this.client.request("posts/update", parameters)
+        return this.client.request(
+            "posts/update",
+            parameters
+        ) as Promise<IPostsUpdate>
     }
 
     /**
@@ -1123,6 +1165,9 @@ export class PostsEndpoint {
      * @memberOf {Promise<IPostsVote>} PostsEndpoint
      */
     vote(parameters: IPostsVoteParameters): Promise<IPostsVote> {
-        return this.client.request("posts/vote", parameters)
+        return this.client.request(
+            "posts/vote",
+            parameters
+        ) as Promise<IPostsVote>
     }
 }

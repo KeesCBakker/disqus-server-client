@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IApplicationsListUsageParameters {
@@ -36,6 +37,9 @@ export class ApplicationsEndpoint {
     listUsage(
         parameters: IApplicationsListUsageParameters
     ): Promise<IApplicationsListUsage> {
-        return this.client.request("applications/listUsage", parameters)
+        return this.client.request(
+            "applications/listUsage",
+            parameters
+        ) as Promise<IApplicationsListUsage>
     }
 }

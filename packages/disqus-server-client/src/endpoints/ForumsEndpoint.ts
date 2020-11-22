@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IForumsAddModeratorParameters {
@@ -1344,7 +1345,10 @@ export class ForumsEndpoint {
     addModerator(
         parameters: IForumsAddModeratorParameters
     ): Promise<IForumsAddModerator> {
-        return this.client.request("forums/addModerator", parameters)
+        return this.client.request(
+            "forums/addModerator",
+            parameters
+        ) as Promise<IForumsAddModerator>
     }
 
     /**
@@ -1355,7 +1359,10 @@ export class ForumsEndpoint {
      * @memberOf {Promise<IForumsCreate>} ForumsEndpoint
      */
     create(parameters: IForumsCreateParameters): Promise<IForumsCreate> {
-        return this.client.request("forums/create", parameters)
+        return this.client.request(
+            "forums/create",
+            parameters
+        ) as Promise<IForumsCreate>
     }
 
     /**
@@ -1366,7 +1373,10 @@ export class ForumsEndpoint {
      * @memberOf {Promise<IForumsDetails>} ForumsEndpoint
      */
     details(parameters: IForumsDetailsParameters): Promise<IForumsDetails> {
-        return this.client.request("forums/details", parameters)
+        return this.client.request(
+            "forums/details",
+            parameters
+        ) as Promise<IForumsDetails>
     }
 
     /**
@@ -1374,20 +1384,27 @@ export class ForumsEndpoint {
      *
      * @param {IForumsDisableAdsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    disableAds(parameters: IForumsDisableAdsParameters): Promise<any> {
-        return this.client.request("forums/disableAds", parameters)
+    disableAds(
+        parameters: IForumsDisableAdsParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/disableAds",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
      * Gets forums that are classified in tempest (primarily means has ahigh quality score and is in english)
      *
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    fixFavIconsForClassifiedForums(): Promise<any> {
-        return this.client.request("forums/fixFavIconsForClassifiedForums")
+    fixFavIconsForClassifiedForums(): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/fixFavIconsForClassifiedForums"
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1395,20 +1412,27 @@ export class ForumsEndpoint {
      *
      * @param {IForumsFollowParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    follow(parameters: IForumsFollowParameters): Promise<any> {
-        return this.client.request("forums/follow", parameters)
+    follow(
+        parameters: IForumsFollowParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/follow",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
      * Internal only endpoint that causes the interesting content (forums) tobe generated, but not returned.
      *
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    generateInterestingContent(): Promise<any> {
-        return this.client.request("forums/generateInterestingContent")
+    generateInterestingContent(): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/generateInterestingContent"
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1416,12 +1440,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsInterestingForumsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
     interestingForums(
         parameters: IForumsInterestingForumsParameters
-    ): Promise<any> {
-        return this.client.request("forums/interestingForums", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/interestingForums",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1434,7 +1461,10 @@ export class ForumsEndpoint {
     listCategories(
         parameters: IForumsListCategoriesParameters
     ): Promise<IForumsListCategories> {
-        return this.client.request("forums/listCategories", parameters)
+        return this.client.request(
+            "forums/listCategories",
+            parameters
+        ) as Promise<IForumsListCategories>
     }
 
     /**
@@ -1442,10 +1472,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsListFollowersParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    listFollowers(parameters: IForumsListFollowersParameters): Promise<any> {
-        return this.client.request("forums/listFollowers", parameters)
+    listFollowers(
+        parameters: IForumsListFollowersParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/listFollowers",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1458,7 +1493,10 @@ export class ForumsEndpoint {
     listModerators(
         parameters: IForumsListModeratorsParameters
     ): Promise<IForumsListModerators> {
-        return this.client.request("forums/listModerators", parameters)
+        return this.client.request(
+            "forums/listModerators",
+            parameters
+        ) as Promise<IForumsListModerators>
     }
 
     /**
@@ -1466,12 +1504,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsListMostActiveUsersParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
     listMostActiveUsers(
         parameters: IForumsListMostActiveUsersParameters
-    ): Promise<any> {
-        return this.client.request("forums/listMostActiveUsers", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/listMostActiveUsers",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1484,7 +1525,10 @@ export class ForumsEndpoint {
     listMostLikedUsers(
         parameters: IForumsListMostLikedUsersParameters
     ): Promise<IForumsListMostLikedUsers> {
-        return this.client.request("forums/listMostLikedUsers", parameters)
+        return this.client.request(
+            "forums/listMostLikedUsers",
+            parameters
+        ) as Promise<IForumsListMostLikedUsers>
     }
 
     /**
@@ -1497,7 +1541,10 @@ export class ForumsEndpoint {
     listPosts(
         parameters: IForumsListPostsParameters
     ): Promise<IForumsListPosts> {
-        return this.client.request("forums/listPosts", parameters)
+        return this.client.request(
+            "forums/listPosts",
+            parameters
+        ) as Promise<IForumsListPosts>
     }
 
     /**
@@ -1510,7 +1557,10 @@ export class ForumsEndpoint {
     listThreads(
         parameters: IForumsListThreadsParameters
     ): Promise<IForumsListThreads> {
-        return this.client.request("forums/listThreads", parameters)
+        return this.client.request(
+            "forums/listThreads",
+            parameters
+        ) as Promise<IForumsListThreads>
     }
 
     /**
@@ -1518,15 +1568,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsListUserModerationHistoryParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
     listUserModerationHistory(
         parameters: IForumsListUserModerationHistoryParameters
-    ): Promise<any> {
+    ): Promise<IGenericDisqusResponse> {
         return this.client.request(
             "forums/listUserModerationHistory",
             parameters
-        )
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1534,12 +1584,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsRemoveDefaultAvatarParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
     removeDefaultAvatar(
         parameters: IForumsRemoveDefaultAvatarParameters
-    ): Promise<any> {
-        return this.client.request("forums/removeDefaultAvatar", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/removeDefaultAvatar",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1552,7 +1605,10 @@ export class ForumsEndpoint {
     removeModerator(
         parameters: IForumsRemoveModeratorParameters
     ): Promise<IForumsRemoveModerator> {
-        return this.client.request("forums/removeModerator", parameters)
+        return this.client.request(
+            "forums/removeModerator",
+            parameters
+        ) as Promise<IForumsRemoveModerator>
     }
 
     /**
@@ -1560,10 +1616,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsUnfollowParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    unfollow(parameters: IForumsUnfollowParameters): Promise<any> {
-        return this.client.request("forums/unfollow", parameters)
+    unfollow(
+        parameters: IForumsUnfollowParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/unfollow",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1571,10 +1632,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsUpdateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    update(parameters: IForumsUpdateParameters): Promise<any> {
-        return this.client.request("forums/update", parameters)
+    update(
+        parameters: IForumsUpdateParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/update",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1582,12 +1648,15 @@ export class ForumsEndpoint {
      *
      * @param {IForumsUpdateDefaultAvatarParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
     updateDefaultAvatar(
         parameters: IForumsUpdateDefaultAvatarParameters
-    ): Promise<any> {
-        return this.client.request("forums/updateDefaultAvatar", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/updateDefaultAvatar",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1595,9 +1664,14 @@ export class ForumsEndpoint {
      *
      * @param {IForumsValidateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsEndpoint
      */
-    validate(parameters: IForumsValidateParameters): Promise<any> {
-        return this.client.request("forums/validate", parameters)
+    validate(
+        parameters: IForumsValidateParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/validate",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

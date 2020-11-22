@@ -65,7 +65,7 @@ export class Spec {
 
 		const returnType =
 			this.getJsonExamples().length == 0
-				? "Promise<any>"
+				? "Promise<IGenericDisqusResponse>"
 				: `Promise<${this.returnInterfaceName}>`;
 
 		const description = `
@@ -79,7 +79,7 @@ export class Spec {
 		return `
         ${description}
         ${this.name}(${parameters}): ${returnType}{
-			return this.client.request("${this.action}"${parameterValue});
+			return this.client.request("${this.action}"${parameterValue}) as ${returnType};
         }
     `;
 	}

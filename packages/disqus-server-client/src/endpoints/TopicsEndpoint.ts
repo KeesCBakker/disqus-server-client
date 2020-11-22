@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface ITopicsUpdateParameters {
@@ -34,9 +35,14 @@ export class TopicsEndpoint {
      *
      * @param {ITopicsUpdateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} TopicsEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} TopicsEndpoint
      */
-    update(parameters: ITopicsUpdateParameters): Promise<any> {
-        return this.client.request("topics/update", parameters)
+    update(
+        parameters: ITopicsUpdateParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "topics/update",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

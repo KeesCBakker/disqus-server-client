@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IForumsBlockBanPostAuthorParameters {
@@ -78,11 +79,14 @@ export class ForumsBlockEndpoint {
      *
      * @param {IForumsBlockBanPostAuthorParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsBlockEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsBlockEndpoint
      */
     banPostAuthor(
         parameters: IForumsBlockBanPostAuthorParameters
-    ): Promise<any> {
-        return this.client.request("forums/block/banPostAuthor", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/block/banPostAuthor",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

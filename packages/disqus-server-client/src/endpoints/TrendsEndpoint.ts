@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface ITrendsListThreadsParameters {
@@ -75,6 +76,9 @@ export class TrendsEndpoint {
     listThreads(
         parameters: ITrendsListThreadsParameters
     ): Promise<ITrendsListThreads> {
-        return this.client.request("trends/listThreads", parameters)
+        return this.client.request(
+            "trends/listThreads",
+            parameters
+        ) as Promise<ITrendsListThreads>
     }
 }

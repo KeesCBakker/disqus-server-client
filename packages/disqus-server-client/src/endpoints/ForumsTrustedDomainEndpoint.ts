@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IForumsTrustedDomainCreateParameters {
@@ -58,10 +59,15 @@ export class ForumsTrustedDomainEndpoint {
      *
      * @param {IForumsTrustedDomainCreateParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsTrustedDomainEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsTrustedDomainEndpoint
      */
-    create(parameters: IForumsTrustedDomainCreateParameters): Promise<any> {
-        return this.client.request("forums/trustedDomain/create", parameters)
+    create(
+        parameters: IForumsTrustedDomainCreateParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/trustedDomain/create",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -69,10 +75,15 @@ export class ForumsTrustedDomainEndpoint {
      *
      * @param {IForumsTrustedDomainKillParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsTrustedDomainEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsTrustedDomainEndpoint
      */
-    kill(parameters: IForumsTrustedDomainKillParameters): Promise<any> {
-        return this.client.request("forums/trustedDomain/kill", parameters)
+    kill(
+        parameters: IForumsTrustedDomainKillParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/trustedDomain/kill",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -80,9 +91,14 @@ export class ForumsTrustedDomainEndpoint {
      *
      * @param {IForumsTrustedDomainListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} ForumsTrustedDomainEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} ForumsTrustedDomainEndpoint
      */
-    list(parameters: IForumsTrustedDomainListParameters): Promise<any> {
-        return this.client.request("forums/trustedDomain/list", parameters)
+    list(
+        parameters: IForumsTrustedDomainListParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "forums/trustedDomain/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

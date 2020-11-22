@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IPagesListParameters {
@@ -37,9 +38,12 @@ export class PagesEndpoint {
      *
      * @param {IPagesListParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} PagesEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} PagesEndpoint
      */
-    list(parameters: IPagesListParameters): Promise<any> {
-        return this.client.request("pages/list", parameters)
+    list(parameters: IPagesListParameters): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "pages/list",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }

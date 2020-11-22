@@ -1,3 +1,4 @@
+import { IGenericDisqusResponse } from "disqus-server-client-core"
 import { Disqus } from "./../disqus"
 
 export interface IUsersCheckUsernameParameters {
@@ -1088,10 +1089,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersCheckUsernameParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    checkUsername(parameters: IUsersCheckUsernameParameters): Promise<any> {
-        return this.client.request("users/checkUsername", parameters)
+    checkUsername(
+        parameters: IUsersCheckUsernameParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/checkUsername",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1102,7 +1108,10 @@ export class UsersEndpoint {
      * @memberOf {Promise<IUsersDetails>} UsersEndpoint
      */
     details(parameters: IUsersDetailsParameters): Promise<IUsersDetails> {
-        return this.client.request("users/details", parameters)
+        return this.client.request(
+            "users/details",
+            parameters
+        ) as Promise<IUsersDetails>
     }
 
     /**
@@ -1113,7 +1122,10 @@ export class UsersEndpoint {
      * @memberOf {Promise<IUsersFollow>} UsersEndpoint
      */
     follow(parameters: IUsersFollowParameters): Promise<IUsersFollow> {
-        return this.client.request("users/follow", parameters)
+        return this.client.request(
+            "users/follow",
+            parameters
+        ) as Promise<IUsersFollow>
     }
 
     /**
@@ -1121,12 +1133,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersInterestingUsersParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     interestingUsers(
         parameters: IUsersInterestingUsersParameters
-    ): Promise<any> {
-        return this.client.request("users/interestingUsers", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/interestingUsers",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1134,12 +1149,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListActiveForumsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listActiveForums(
         parameters: IUsersListActiveForumsParameters
-    ): Promise<any> {
-        return this.client.request("users/listActiveForums", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listActiveForums",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1152,7 +1170,10 @@ export class UsersEndpoint {
     listActivity(
         parameters: IUsersListActivityParameters
     ): Promise<IUsersListActivity> {
-        return this.client.request("users/listActivity", parameters)
+        return this.client.request(
+            "users/listActivity",
+            parameters
+        ) as Promise<IUsersListActivity>
     }
 
     /**
@@ -1160,10 +1181,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListFollowersParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    listFollowers(parameters: IUsersListFollowersParameters): Promise<any> {
-        return this.client.request("users/listFollowers", parameters)
+    listFollowers(
+        parameters: IUsersListFollowersParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listFollowers",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1171,10 +1197,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListFollowingParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    listFollowing(parameters: IUsersListFollowingParameters): Promise<any> {
-        return this.client.request("users/listFollowing", parameters)
+    listFollowing(
+        parameters: IUsersListFollowingParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listFollowing",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1182,12 +1213,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListFollowingChannelsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listFollowingChannels(
         parameters: IUsersListFollowingChannelsParameters
-    ): Promise<any> {
-        return this.client.request("users/listFollowingChannels", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listFollowingChannels",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1195,12 +1229,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListFollowingForumsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listFollowingForums(
         parameters: IUsersListFollowingForumsParameters
-    ): Promise<any> {
-        return this.client.request("users/listFollowingForums", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listFollowingForums",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1213,7 +1250,10 @@ export class UsersEndpoint {
     listForums(
         parameters: IUsersListForumsParameters
     ): Promise<IUsersListForums> {
-        return this.client.request("users/listForums", parameters)
+        return this.client.request(
+            "users/listForums",
+            parameters
+        ) as Promise<IUsersListForums>
     }
 
     /**
@@ -1221,12 +1261,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListModeratedChannelsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listModeratedChannels(
         parameters: IUsersListModeratedChannelsParameters
-    ): Promise<any> {
-        return this.client.request("users/listModeratedChannels", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listModeratedChannels",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1234,12 +1277,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListMostActiveForumsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listMostActiveForums(
         parameters: IUsersListMostActiveForumsParameters
-    ): Promise<any> {
-        return this.client.request("users/listMostActiveForums", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listMostActiveForums",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1247,12 +1293,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersListOwnedChannelsParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     listOwnedChannels(
         parameters: IUsersListOwnedChannelsParameters
-    ): Promise<any> {
-        return this.client.request("users/listOwnedChannels", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/listOwnedChannels",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1263,7 +1312,10 @@ export class UsersEndpoint {
      * @memberOf {Promise<IUsersListPosts>} UsersEndpoint
      */
     listPosts(parameters: IUsersListPostsParameters): Promise<IUsersListPosts> {
-        return this.client.request("users/listPosts", parameters)
+        return this.client.request(
+            "users/listPosts",
+            parameters
+        ) as Promise<IUsersListPosts>
     }
 
     /**
@@ -1271,10 +1323,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersRemoveFollowerParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    removeFollower(parameters: IUsersRemoveFollowerParameters): Promise<any> {
-        return this.client.request("users/removeFollower", parameters)
+    removeFollower(
+        parameters: IUsersRemoveFollowerParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/removeFollower",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1282,10 +1339,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersReportParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    report(parameters: IUsersReportParameters): Promise<any> {
-        return this.client.request("users/report", parameters)
+    report(
+        parameters: IUsersReportParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/report",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1296,7 +1358,10 @@ export class UsersEndpoint {
      * @memberOf {Promise<IUsersUnfollow>} UsersEndpoint
      */
     unfollow(parameters: IUsersUnfollowParameters): Promise<IUsersUnfollow> {
-        return this.client.request("users/unfollow", parameters)
+        return this.client.request(
+            "users/unfollow",
+            parameters
+        ) as Promise<IUsersUnfollow>
     }
 
     /**
@@ -1304,10 +1369,15 @@ export class UsersEndpoint {
      *
      * @param {IUsersUpdateProfileParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
-    updateProfile(parameters: IUsersUpdateProfileParameters): Promise<any> {
-        return this.client.request("users/updateProfile", parameters)
+    updateProfile(
+        parameters: IUsersUpdateProfileParameters
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/updateProfile",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 
     /**
@@ -1315,11 +1385,14 @@ export class UsersEndpoint {
      *
      * @param {IUsersUpdateSSOProfileParameters} parameters The parameters.
      * @returns The response as a promise.
-     * @memberOf {Promise<any>} UsersEndpoint
+     * @memberOf {Promise<IGenericDisqusResponse>} UsersEndpoint
      */
     updateSSOProfile(
         parameters: IUsersUpdateSSOProfileParameters
-    ): Promise<any> {
-        return this.client.request("users/updateSSOProfile", parameters)
+    ): Promise<IGenericDisqusResponse> {
+        return this.client.request(
+            "users/updateSSOProfile",
+            parameters
+        ) as Promise<IGenericDisqusResponse>
     }
 }
