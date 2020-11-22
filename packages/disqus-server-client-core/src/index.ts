@@ -7,8 +7,8 @@ import { IDisqusConfig } from "./IDisqusConfig"
 
 export {
     DisqusCore,
-    IDisqusResponse as IDiscusResponse,
-    IGenericDisqusResponse as IGenericDiscusResponse,
+    IDisqusResponse,
+    IGenericDisqusResponse,
     IDisqusConfig,
     cachedActions,
     actionRequiringPost,
