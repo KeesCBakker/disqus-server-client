@@ -12,7 +12,8 @@
 		"declaration": true
 	},
 	"include": [
-		"src/**/*.ts"
+		"src/**/*.ts",
+		"generate/**/*.ts"
 	],
 	"exclude": [
 		"node_modules"
