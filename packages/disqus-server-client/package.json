@@ -1,6 +1,6 @@
 {
     "name": "disqus-server-client",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Strongly typed client that helps your server to connect to the Disqus API.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -27,7 +27,7 @@
         "url": "https://github.com/KeesCBakker/disqus-server-client/issues"
     },
     "dependencies": {
-        "disqus-server-client-core": "^0.0.3"
+        "disqus-server-client-core": "^0.0.4"
     },
     "devDependencies": {
         "@types/node": "^14",
