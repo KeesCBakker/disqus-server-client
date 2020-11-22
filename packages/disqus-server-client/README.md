@@ -1,5 +1,5 @@
-# Disqus Server Client - Core
-Core client that helps your server to connect to the Disqus API.
+# Disqus Server Client - Strongly Typed
+Strongly typed client that helps your server to connect to the Disqus API.
 
 ## Features
 <a href="https://disqus.com/api/docs/">The Disqus API</a> - although not very documented - is very easy to implement. This implementation has a view advantages:
