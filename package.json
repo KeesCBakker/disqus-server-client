@@ -1,0 +1,23 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "build": "lerna bootstrap & lerna run build",
+    "test": "lerna run test",
+    "make": "lerna run build && lerna publish --yes --cd-version patch & git add . & git commit -m Version-bump && git push ",
+    "make-feature": "lerna run build && lerna publish --yes --cd-version minor & git add . & git commit -m Version-bump && git push ",
+    "generate": "ts-node generate/generate.ts & npm run format & npm run build",
+    "format": "lerna run format"
+  },
+  "dependencies": {
+    "@types/jsdom": "^16.2.5",
+    "@types/node": "^14.14.9",
+    "axios": "^0.21.0",
+    "jsdom": "^16.4.0",
+    "prettier": "^2.2.0",
+    "quicktype-core": "^6.0.69"
+  }
+}
