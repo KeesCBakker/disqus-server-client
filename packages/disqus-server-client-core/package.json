@@ -1,6 +1,6 @@
 {
     "name": "disqus-server-client-core",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Core client that helps your server to connect to the Disqus API.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
